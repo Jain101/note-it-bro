@@ -1,0 +1,22 @@
+{
+  "name": "notecli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "type": "module",
+  "bin": {
+    "noteit": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "cors": "^2.8.5",
+    "mongodb": "^6.2.0",
+    "shelljs": "^0.8.5"
+  }
+}
