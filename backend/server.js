@@ -1,16 +1,19 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import connect from './db.js'
+import Note from './models/Note.js'
 
 dotenv.config()
 const app = express()
-app.use(cors)
+app.use(cors())
 const port = process.env.PORT
 
 // Define routes
 app.get('/notes', async (req, res) => {
     try {
         const notes = await Note.find();
+        console.log(notes);
         res.json(notes);
     } catch (error) {
         console.error('Error fetching notes', error);
@@ -37,6 +40,7 @@ app.get('/notes/search', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`)
+    connect()
 })
 
 app.route('/book')
